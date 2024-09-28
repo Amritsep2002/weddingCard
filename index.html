@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #647166;
+    font-family: 'Cursive', sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    background: #ffffff;
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.page {
+    display: none;
+    padding: 30px;
+}
+
+.page.active {
+    display: block;
+}
+
+.title, .event-title, .rsvp-title {
+    color: #d4af37;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.couple-names {
+    font-size: 24px;
+    color: #6a1b9a;
+    margin: 0;
+}
+
+.date, .location, .time, .event-details, .rsvp-details {
+    color: #555;
+    margin: 5px 0;
+}
+
+.input-field {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.next-btn, .back-btn, .submit-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #d4af37;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.next-btn:hover, .back-btn:hover, .submit-btn:hover {
+    background-color: #b58929;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1: Welcome -->
+        <div class="page" id="page-1">
+            <h1 class="title">You're Invited!</h1><h3 class="title">Our Wedding</h3>
+
+            <h2 class="couple-names">Gaurav & Smriti</h2>
+            <p class="date">December, 04, 2024</p>
+            <button class="next-btn" onclick="showPage(2)">Next</button>
+        </div>
+
+        <!-- Page 2: Event Details -->
+        <div class="page" id="page-2">
+            <h1 class="event-title">Wedding Ceremony</h1>
+            <p class="event-details">Welcome to our wedding! We are thrilled to have you here to celebrate this beautiful day with us</p>
+            <p class="location">OM marrage Lown Belava Baba Lamahi Varanasi</p>
+            <p class="time">4:00 PM - 6:00 PM</p>
+            <button class="next-btn" onclick="showPage(3)">Next</button>
+            <button class="back-btn" onclick="showPage(1)">Back</button>
+        </div>
+
+        <!-- Page 3: RSVP -->
+        <div class="page" id="page-3">
+            <h1 class="rsvp-title">RSVP</h1>
+            <p class="rsvp-details">Please let us know if you will be able to attend.</p>
+            <input type="text" placeholder="Your Name" class="input-field">
+            <button class="submit-btn">Submit</button>
+            <button class="back-btn" onclick="showPage(2)">Back</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
